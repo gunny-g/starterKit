@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
 import { ThemeToggle } from "@/components/shared/theme-toggle"
@@ -32,9 +33,15 @@ export function DashboardHeader() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem>프로필</DropdownMenuItem>
-            <DropdownMenuItem>설정</DropdownMenuItem>
-            <DropdownMenuItem>로그아웃</DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/dashboard/profile">프로필</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/dashboard/settings">설정</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/">로그아웃</Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
