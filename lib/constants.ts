@@ -1,0 +1,26 @@
+import { LayoutDashboard, FileText, type LucideIcon } from "lucide-react"
+
+// 사이트 기본 정보
+export const siteConfig = {
+  name: "StarterKit",
+  description: "Next.js 16 + ShadcnUI + Tailwind CSS v4 모던 웹 스타터킷",
+} as const
+
+// 랜딩 페이지 네비게이션 항목
+export const landingNavItems = [
+  { label: "기능", href: "#features" },
+  { label: "시작하기", href: "#cta" },
+  { label: "대시보드", href: "/dashboard" },
+] as const
+
+// 대시보드 사이드바 네비게이션 항목
+export interface DashboardNavItem {
+  label: string
+  href: string
+  icon: LucideIcon
+}
+
+export const dashboardNavItems: DashboardNavItem[] = [
+  { label: "대시보드", href: "/dashboard", icon: LayoutDashboard },
+  { label: "폼 예제", href: "/dashboard/form", icon: FileText },
+]
