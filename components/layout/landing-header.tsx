@@ -38,7 +38,7 @@ export function LandingHeader() {
           <ThemeToggle />
 
           <Button asChild className="hidden md:inline-flex">
-            <Link href="/dashboard">시작하기</Link>
+            <Link href="/getting-started">시작하기</Link>
           </Button>
 
           {/* 모바일 햄버거 메뉴 */}
@@ -62,7 +62,7 @@ export function LandingHeader() {
                   </Link>
                 ))}
                 <Button asChild className="mt-4">
-                  <Link href="/dashboard">시작하기</Link>
+                  <Link href="/getting-started">시작하기</Link>
                 </Button>
               </nav>
             </SheetContent>

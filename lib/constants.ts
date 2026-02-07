@@ -9,7 +9,8 @@ export const siteConfig = {
 // 랜딩 페이지 네비게이션 항목
 export const landingNavItems = [
   { label: "기능", href: "#features" },
-  { label: "시작하기", href: "#cta" },
+  { label: "예제", href: "/examples" },
+  { label: "시작하기", href: "/getting-started" },
   { label: "대시보드", href: "/dashboard" },
 ] as const
 

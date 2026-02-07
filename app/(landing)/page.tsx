@@ -89,7 +89,7 @@ export default function LandingPage() {
             있습니다.
           </p>
           <Button size="lg" className="mt-8" asChild>
-            <Link href="/dashboard">
+            <Link href="/getting-started">
               시작하기
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
