@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude code가 만든 파일들
+.playwright-mcp/
+component-showcase.png
+examples-page.png
+form-example.png
+getting-started-dark.png
+getting-started-light.png
+getting-started-mobile.png
+settings-optimization.png
