@@ -45,8 +45,8 @@ export default function LandingPage() {
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Button size="lg" asChild>
-            <Link href="/dashboard">
-              대시보드 체험
+            <Link href="/examples">
+              예제 살펴보기
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

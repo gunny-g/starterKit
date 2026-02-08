@@ -1,5 +1,3 @@
-import { LayoutDashboard, FileText, type LucideIcon } from "lucide-react"
-
 // 사이트 기본 정보
 export const siteConfig = {
   name: "StarterKit",
@@ -11,17 +9,4 @@ export const landingNavItems = [
   { label: "기능", href: "#features" },
   { label: "예제", href: "/examples" },
   { label: "시작하기", href: "/getting-started" },
-  { label: "대시보드", href: "/dashboard" },
 ] as const
-
-// 대시보드 사이드바 네비게이션 항목
-export interface DashboardNavItem {
-  label: string
-  href: string
-  icon: LucideIcon
-}
-
-export const dashboardNavItems: DashboardNavItem[] = [
-  { label: "대시보드", href: "/dashboard", icon: LayoutDashboard },
-  { label: "폼 예제", href: "/dashboard/form", icon: FileText },
-]

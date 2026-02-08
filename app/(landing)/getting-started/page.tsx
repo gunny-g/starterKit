@@ -5,13 +5,11 @@ import {
   Paintbrush,
   Palette,
   Plus,
-  LayoutDashboard,
   Blocks,
   Github,
   ArrowRight,
   ExternalLink,
   CheckCircle2,
-  Copy,
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -63,24 +61,6 @@ const priorityFiles = [
     purpose: "랜딩 페이지 콘텐츠",
     priority: "권장",
   },
-  {
-    path: "app/(dashboard)/dashboard/page.tsx",
-    purpose: "대시보드 메인",
-    priority: "권장",
-  },
-  {
-    path: "components/layout/app-sidebar.tsx",
-    purpose: "사이드바 메뉴 구성",
-    priority: "권장",
-  },
-]
-
-// 대시보드 예제 페이지 목록
-const examplePages = [
-  { name: "대시보드 메인", path: "/dashboard" },
-  { name: "폼 예제", path: "/dashboard/form" },
-  { name: "프로필", path: "/dashboard/profile" },
-  { name: "설정", path: "/dashboard/settings" },
 ]
 
 export default function GettingStartedPage() {
@@ -156,7 +136,6 @@ export default function GettingStartedPage() {
               <pre className="rounded-md bg-muted px-3 py-2 text-sm leading-relaxed">
 {`app/
 ├── (landing)/   # 랜딩 페이지
-├── (dashboard)/ # 대시보드
 └── globals.css  # 테마 변수
 
 components/
@@ -199,12 +178,6 @@ lib/
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <span>
                     <code className="text-xs">logo.tsx</code>에서 로고 교체
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <span>
-                    <code className="text-xs">(dashboard)/</code> 페이지를 실제 콘텐츠로 교체
                   </span>
                 </li>
               </ul>
@@ -257,54 +230,6 @@ lib/
             </TableBody>
           </Table>
         </div>
-      </section>
-
-      <Separator className="my-12 md:my-16" />
-
-      {/* 섹션 4: 대시보드는 교체 가능한 예제 */}
-      <section>
-        <Card className="mx-auto max-w-3xl border-dashed">
-          <CardHeader>
-            <CardTitle className="text-xl">
-              대시보드는 교체 가능한 예제입니다
-            </CardTitle>
-            <CardDescription>
-              포함된 대시보드 페이지는 레이아웃과 사이드바 사용법을 보여주기 위한
-              예제입니다. 실제 프로젝트에서는 자유롭게 교체하세요.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div>
-              <h3 className="text-sm font-semibold">확장 방법</h3>
-              <ol className="mt-2 list-inside list-decimal space-y-1 text-sm text-muted-foreground">
-                <li>
-                  <code className="text-xs">app/(dashboard)/</code> 아래에 새
-                  폴더를 생성합니다.
-                </li>
-                <li>
-                  <code className="text-xs">lib/constants.ts</code>의{" "}
-                  <code className="text-xs">dashboardNavItems</code>에 메뉴를
-                  추가합니다.
-                </li>
-                <li>기존 예제 페이지를 참고하여 교체합니다.</li>
-              </ol>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold">포함된 예제 페이지</h3>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {examplePages.map((page) => (
-                  <Badge key={page.path} variant="outline" className="font-normal">
-                    {page.name}
-                    <span className="ml-1 text-muted-foreground">
-                      {page.path}
-                    </span>
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </section>
 
       <Separator className="my-12 md:my-16" />
@@ -405,17 +330,17 @@ lib/
           <Card className="transition-colors hover:border-primary/50">
             <CardHeader>
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                <LayoutDashboard className="h-5 w-5 text-primary" />
+                <Blocks className="h-5 w-5 text-primary" />
               </div>
-              <CardTitle className="mt-3">대시보드 체험하기</CardTitle>
+              <CardTitle className="mt-3">컴포넌트 쇼케이스</CardTitle>
               <CardDescription>
-                사이드바, 테마 전환, 폼 등 포함된 기능을 직접 확인합니다.
+                ShadcnUI 컴포넌트와 다양한 UI 패턴을 체험합니다.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <Button asChild className="w-full">
-                <Link href="/dashboard">
-                  대시보드로 이동
+                <Link href="/examples/component-showcase">
+                  쇼케이스 보기
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

@@ -29,26 +29,22 @@ npx shadcn@latest add <컴포넌트명>
 
 ### 라우트 그룹
 
-두 개의 라우트 그룹이 각각 다른 레이아웃을 적용:
-
 - **`(landing)`** — 헤더 + 푸터 레이아웃 (공개 페이지)
   - `/`, `/getting-started`, `/examples/*`
-- **`(dashboard)`** — ShadcnUI 사이드바 + 헤더 레이아웃 (대시보드)
-  - `/dashboard`, `/dashboard/form`, `/dashboard/profile`, `/dashboard/settings`
 
 ### 컴포넌트 계층
 
 ```
 components/ui/         ← ShadcnUI 자동 생성 (직접 수정 금지)
 components/shared/     ← 재사용 컴포넌트 (logo, theme-toggle)
-components/layout/     ← 레이아웃 컴포넌트 (headers, sidebar, footer)
+components/layout/     ← 레이아웃 컴포넌트 (headers, footer)
 components/providers/  ← 프로바이더 래퍼 (ThemeProvider)
 ```
 
 ### 핵심 설정 파일
 
-- **`lib/constants.ts`** — 사이트명, 네비게이션 메뉴 구조 (랜딩 + 대시보드)
-- **`app/globals.css`** — OKLch 색상 변수, 다크모드 변수, 사이드바 변수
+- **`lib/constants.ts`** — 사이트명, 네비게이션 메뉴 구조
+- **`app/globals.css`** — OKLch 색상 변수, 다크모드 변수
 - **`components.json`** — ShadcnUI 설정 (스타일, 경로 별칭)
 
 ### 다크모드
