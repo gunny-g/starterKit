@@ -27,6 +27,7 @@ async function getPosts(): Promise<Post[]> {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=6", {
     next: { revalidate: 60 },
   })
+  if (!res.ok) throw new Error(`게시글 조회 실패: ${res.status}`)
   return res.json()
 }
 
@@ -34,6 +35,7 @@ async function getTodos(): Promise<Todo[]> {
   const res = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=8", {
     next: { revalidate: 60 },
   })
+  if (!res.ok) throw new Error(`할일 조회 실패: ${res.status}`)
   return res.json()
 }
 
