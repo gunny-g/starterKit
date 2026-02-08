@@ -17,16 +17,15 @@ import { Separator } from "@/components/ui/separator"
 
 // useLocalStorage 훅
 function useLocalStorage<T>(key: string, initialValue: T) {
-  const [storedValue, setStoredValue] = useState<T>(initialValue)
-
-  useEffect(() => {
+  const [storedValue, setStoredValue] = useState<T>(() => {
+    if (typeof window === "undefined") return initialValue
     try {
       const item = window.localStorage.getItem(key)
-      if (item) setStoredValue(JSON.parse(item))
+      return item ? (JSON.parse(item) as T) : initialValue
     } catch {
-      // 초기값 유지
+      return initialValue
     }
-  }, [key])
+  })
 
   const setValue = (value: T | ((val: T) => T)) => {
     const valueToStore = value instanceof Function ? value(storedValue) : value
@@ -39,11 +38,13 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
 // useMediaQuery 훅
 function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(false)
+  const [matches, setMatches] = useState(() => {
+    if (typeof window === "undefined") return false
+    return window.matchMedia(query).matches
+  })
 
   useEffect(() => {
     const media = window.matchMedia(query)
-    setMatches(media.matches)
     const listener = (e: MediaQueryListEvent) => setMatches(e.matches)
     media.addEventListener("change", listener)
     return () => media.removeEventListener("change", listener)
