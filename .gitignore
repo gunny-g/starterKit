@@ -49,3 +49,11 @@ getting-started-dark.png
 getting-started-light.png
 getting-started-mobile.png
 settings-optimization.png
+
+# Claude hooks 환경 변수 (Slack Webhook URL 등)
+.claude/.env.hooks
+
+# Claude hooks 백업 파일 및 로그
+.claude/backups/
+hook-bash.txt
+hook-test.txt
